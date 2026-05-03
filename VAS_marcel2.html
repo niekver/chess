@@ -1,0 +1,82 @@
+```html
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mliebelt/pgn-viewer@1.6.11/lib/themes/lichess.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mliebelt/pgn-viewer@1.6.11/lib/pgn-viewer.css">
+
+<style>
+body{
+    margin:0;
+    padding:20px;
+    background:white;
+    font-family:Arial,sans-serif;
+}
+.pgnvjs .comment{
+    color:#1f4e79;
+    font-style:italic;
+    line-height:1.4em;
+}
+</style>
+</head>
+
+<body>
+
+<div id="board"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@mliebelt/pgn-viewer@1.6.11/lib/dist.js"></script>
+
+<script>
+window.onload = function() {
+
+PGNV.pgnView("board", {
+    boardSize: 420,
+    layout: "left",
+    movesWidth: "340px",
+    pieceStyle: "merida",
+
+    pgn: `[Event "SGA-comp 25-26"]
+[Site "Amsterdam"]
+[Date "2026.04.30"]
+[Round "7"]
+[White "Peek, Marcel"]
+[Black "Kanis, Sierk"]
+[Result "0-1"]
+[ECO "E12"]
+[WhiteElo "2257"]
+[BlackElo "2092"]
+[Annotator "Peek,Marcel"]
+
+1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. a3 Bb7 5. Nc3 Ne4 6. Nxe4 Bxe4 7. e3 d6
+8. Bd3 Bxd3 9. Qxd3 g6 10. e4 Bg7 11. Bg5 Qd7 12. Rd1 O-O 13. h4 Nc6
+14. Be3 e5 15. d5 Ne7 16. h5 {Wit heeft groot voordeel.}
+Qg4 17. Rh4 Qd7 {Zwart kan niet op g2 nemen, want na 18.Ke2 volgt Tg1 met vernietigende kracht.}
+18. hxg6 Nxg6 19. Rh5 Rae8 20. Qc2 {Heel erg sterk is meteen de koning naar de andere kant brengen:}
+(20. Kd2 $1 f5 21. Kc1)
+20... f5 21. exf5 $2 {De engine beoordeelt}
+(21. Rxf5 Rxf5 22. exf5 Nf4 23. g4 {als gewonnen.})
+21... e4 22. fxg6 exf3 23. gxh7+ Kh8 24. gxf3 Rxf3 25. Qg6 Bxb2 $2
+(25... Qe7 26. Rd3 {en dan pas} Bxb2 {houdt zwart in de partij.})
+26. Kd2 $1 Rf6 27. Qc2 {Een goed idee is tripleren op de g-lijn:}
+(27. Qg2 Rf7 28. Rg5 Rg7 29. Rg1 Qf7 30. Qg4)
+27... Be5 $2 {Ik verwachtte}
+(27... Qg7 {en was daarop} 28. Rg1 Qxg1 29. Qxb2 {van plan, maar na} Qg7 30. Qd4 {kan zwart gelijk maken door op e3 ook een kwaliteit te offeren.})
+28. Rg1
+(28. Rg5 Qh3 29. Re1 $1 {wint volgens Stockfish.})
+28... Qf7 {Deze zet had ik niet zien aankomen, zwart valt zowel h5 als f2 aan. Met alleen de increment-seconden lukte het me niet een goede reactie te vinden.}
+29. Rhg5 $2
+(29. Rhh1 $1 {is nog winnend.})
+29... Rxf2+ 30. Bxf2 Qxf2+ 31. Kd1 Qd4+ {En hier lukte het me zelfs niet om tijdig een zet te doen. Total meltdown. Overigens is de slotstelling nog steeds remise. Bijvoorbeeld:}
+(31... Qd4+ 32. Qd2 Qa1+ 33. Qc1 Qxc1+ 34. Kxc1 Bf4+ 35. Kc2 Bxg5 36. Rxg5 Kxh7 37. Rg3)
+0-1`
+});
+
+}
+</script>
+
+</body>
+</html>
+```
